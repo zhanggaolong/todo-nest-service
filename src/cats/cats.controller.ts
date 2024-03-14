@@ -10,6 +10,11 @@ export class CatsController {
     private catsService: CatsService
   ) {}
 
+  @Get()
+  notFound(): string {
+    return 'not Found';
+  }
+
   @Post('/name')
   async create(@Body() createCatDto: CreateCatDto) {
     this.catsService.create(createCatDto);
